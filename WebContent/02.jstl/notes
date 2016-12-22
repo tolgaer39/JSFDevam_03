@@ -1,0 +1,2 @@
+xmlns:fn="http://java.sun.com/jsp/jstl/functions" --> JSTL functions taglari icin
+xmlns:c="http://java.sun.com/jstl/core" --> JSTL taglari icin kullanilir.

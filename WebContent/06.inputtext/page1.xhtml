@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+	<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Expression Language Example</title>
+</h:head>
+
+<!-- faces config te navigation rulles belirtilmistir... -->
+
+<h:form>
+
+<table>
+
+	<tr>
+			<td>inpuutext</td>
+			<td><h:inputText value="#{inputBean.name}"/></td>	
+	</tr>
+
+	<tr>
+			<td>inputscreet</td>
+			<td><h:inputSecret value="#{inputBean.password}"/></td>
+	</tr>
+
+	<!-- UIInput objesi ile bind edersek binding attribute kullanmamiz gerekir. -->
+
+	<tr>
+			<td>Binding</td>
+			<td><h:inputText binding="#{inputBean.backingBinding}"/></td>
+	</tr>
+	
+	<tr>
+			<td>ReadOnly</td>
+			<td><h:inputText value="read only example" readonly="true"/></td>
+	</tr>
+
+	<tr>
+			<td>disable</td>
+			<td><h:inputText value="disable example" disabled="true"/></td>
+	</tr>
+	
+	
+	<tr>
+			<td>max length</td>
+			<td><h:inputText value="max length example" maxlength="7"/></td>
+	</tr>
+
+	<tr>
+			<td>style</td>
+			<td><h:inputText style="color:red" /></td>
+	</tr>
+
+	<tr>
+			<td>style Class</td>
+			<td><h:inputText styleClass="myClass" /></td>
+	</tr>
+
+
+	<!-- text degerinden cikarken ilgili fonksiyonu cagirip js alert ile uyari mesaji vermemizi sagliyor -->
+	<tr>
+			<td>Java Script</td>
+			<td><h:inputText onblur="callMe()" /></td>
+	</tr>
+	
+	<!-- daha fazla alan yazilacaksa eger rows="5" gibi   -->
+	
+	<tr>
+			<td>InputTextArea:</td>
+			<td><h:inputTextarea /></td>
+	</tr>
+	<tr>
+			<td>Rows</td>
+			<td><h:inputTextarea rows="5" /></td>
+	</tr>
+
+	<tr>
+			<td>Cols</td>
+			<td><h:inputTextarea cols="5" /></td>
+	</tr>
+
+	<!-- gizli gorunmez olmasini istersek inputHidden kullaniriz. -->
+
+	<tr>
+			<td>There is a hidden</td>
+			<td><h:inputHidden value="iam hidden!" /></td>
+	</tr>
+
+	
+	
+
+</table>
+
+
+</h:form>
+
+<style>
+.myClass{
+color:blue
+}
+</style>
+
+<script>
+function callMe(){
+	alert("Hello !")
+}
+
+</script>
+</html>

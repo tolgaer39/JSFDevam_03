@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core">
+	
+	<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Expression Language Example</title>
+</h:head>
+
+<h:body>
+
+		<c:set var="myAttribute" scope="session" value="myAttribute value"/>
+
+		<p>#{myAttribute}</p>
+		<p>${myAttribute}</p>
+		
+		<c:set target="#{JSTLBean}" property="property1" value="myproperty1 value" />
+		
+		<p>#{JSTLBean.property1}</p>
+		
+		<c:set var="result" value="60" />
+		
+		<c:if test="#{result>50}">
+		<p>Gecerli not! #{result}</p>
+		</c:if>
+		
+		<!-- c:out html de hata veriyor.. yazdiramiyoruz... -->
+		
+		<c:set target="#{JSTLBean.myMap}" property="key1" value="value1" />
+		<c:set target="#{JSTLBean.myMap}" property="key2" value="value2" />	
+		<c:set target="#{JSTLBean.myMap}" property="key3" value="value3" />
+		
+		<c:forEach var="entry" items="#{JSTLBean.myMap}">
+			<p>${entry.key} , #{entry.value}</p>
+		</c:forEach>
+		
+</h:body>
+
+</html>

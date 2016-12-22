@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+        http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+
+ <navigation-rule>
+		<from-view-id>/04.dynamicnavigation/page3.xhtml</from-view-id>  <!-- hangi sayfadan geldigi -->
+		
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/04.dynamicnavigation/login.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>logout</from-outcome>
+			<to-view-id>/04.dynamicnavigation/logout.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>password</from-outcome>
+			<to-view-id>/04.dynamicnavigation/password.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+ <navigation-rule>
+		<from-view-id>/05.conditionalnavigation/page1.xhtml</from-view-id>  <!-- hangi sayfadan geldigi -->
+		
+		<navigation-case>
+			<from-outcome>testOutcome</from-outcome>
+			<if>#{conditionalNavigationBean.property1 =='page2'}</if>
+			<to-view-id>/05.conditionalnavigation/page2.xhtml</to-view-id>
+			<redirect/>    <!-- redirect islemini istersen bu sekilde de kullanabiliriz -->
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>testOutcome</from-outcome>
+			<if>#{conditionalNavigationBean.property1 =='page3'}</if>
+			<to-view-id>/05.conditionalnavigation/page3.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>testOutcome</from-outcome>
+			<if>#{conditionalNavigationBean.property1 =='page4' and conditionalNavigationBean.property2 ==4}</if>
+			<to-view-id>/05.conditionalnavigation/page4.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+
+
+</faces-config>
